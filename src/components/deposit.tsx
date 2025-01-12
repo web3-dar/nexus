@@ -1,6 +1,6 @@
 // import React from "react";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import BottomNav from "../pages/stickyNav";
 
 const formatDate = (date: Date) => {
