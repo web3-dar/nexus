@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoMdWarning } from "react-icons/io";
-import img from "../assets/logo.png";
+import img from "../assets/person_1.jpg";
 
 const Confirmation: React.FC = () => {
   const [pin, setPin] = useState("");

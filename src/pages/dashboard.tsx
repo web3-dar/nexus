@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link,  useNavigate } from "react-router-dom";
 import {  FaSyncAlt } from "react-icons/fa";
-import img from "../assets/01.jpg";
+import img from "../assets/person_1.jpg";
 
 const Dashboard = () => {
   const navigate = useNavigate();
