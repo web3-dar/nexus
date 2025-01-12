@@ -1,7 +1,10 @@
+import BottomNav from "../pages/stickyNav";
 
 
 const LoanPage = () => {
   return (
+    <>
+    
     <div className="min-h-screen bg-gray-50 p-6">
       <h1 className="text-2xl font-bold mb-6">Current Loans</h1>
 
@@ -117,6 +120,8 @@ const LoanPage = () => {
         + New Loan
       </button>
     </div>
+    <BottomNav/>
+    </>
   );
 };
 

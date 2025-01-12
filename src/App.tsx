@@ -8,6 +8,9 @@ import Dashboard from './pages/dashboard';
 import PaymentPage from './components/payment';
 import DepositsPage from './components/deposit';
 import LoanPage from './components/loan';
+import TransactionHistory from './pages/history';
+import MyCards from './pages/myCards';
+import SettingsPage from './pages/settings';
 
 
 const App: React.FC = () => {
@@ -22,6 +25,9 @@ const App: React.FC = () => {
           <Route path="/overview" element={<PaymentPage />} />
           <Route path="/deposit" element={<DepositsPage />} />
           <Route path="/loan" element={<LoanPage />} />
+          <Route path="/history" element={<TransactionHistory />} />
+          <Route path="/cards" element={<MyCards />} />
+          <Route path="/settings" element={<SettingsPage />} />
           
           
           <Route path="/dashboard" element={<Dashboard />} />

@@ -1,21 +1,55 @@
 import { useState } from "react";
-import { Link,  useNavigate } from "react-router-dom";
-import {  FaSyncAlt } from "react-icons/fa";
+import {   useNavigate } from "react-router-dom";
+import {   FaSyncAlt } from "react-icons/fa";
 import img from "../assets/person_1.jpg";
+import BottomNav from "./stickyNav";
 
 const Dashboard = () => {
   const navigate = useNavigate();
 
   const allTransactions = [
-    { type: "Debit", amount: -54.0, date: "2025-01-03 06:06:00" },
-    { type: "Credit", amount: 87.0, date: "2025-01-03 05:59:00" },
-    { type: "Debit", amount: -120.5, date: "2025-01-02 15:30:00" },
-    { type: "Credit", amount: 45.0, date: "2025-01-02 12:20:00" },
-    { type: "Debit", amount: -35.0, date: "2025-01-01 08:45:00" },
-    { type: "Credit", amount: 250.0, date: "2025-01-01 07:00:00" },
-    { type: "Debit", amount: -75.5, date: "2024-12-31 10:15:00" },
-    { type: "Credit", amount: 90.0, date: "2024-12-31 09:50:00" },
+    { type: "Credit", amount: 150000.0, date: "2025-01-03 09:00:00" },
+    { type: "Debit", amount: -2500.0, date: "2025-01-03 14:30:00" },
+    { type: "Credit", amount: 75000.0, date: "2025-01-02 16:00:00" },
+    { type: "Debit", amount: -1500.0, date: "2025-01-02 10:20:00" },
+    { type: "Credit", amount: 200000.0, date: "2025-01-01 10:00:00" },
+    { type: "Debit", amount: -5000.0, date: "2025-01-01 12:30:00" },
+    { type: "Debit", amount: -200.0, date: "2024-12-31 18:45:00" },
+    { type: "Credit", amount: 100000.0, date: "2024-12-31 10:15:00" },
+    { type: "Credit", amount: 180000.0, date: "2024-12-15 08:30:00" },
+    { type: "Debit", amount: -3000.0, date: "2024-12-15 14:50:00" },
+    { type: "Debit", amount: -800.0, date: "2024-12-10 11:00:00" },
+    { type: "Credit", amount: 95000.0, date: "2024-12-10 09:45:00" },
+    { type: "Debit", amount: -600.0, date: "2024-12-05 17:20:00" },
+    { type: "Credit", amount: 300000.0, date: "2024-12-05 10:10:00" },
+    { type: "Debit", amount: -12000.0, date: "2024-11-30 15:40:00" },
+    { type: "Credit", amount: 400000.0, date: "2024-11-30 08:00:00" },
+    { type: "Debit", amount: -500.0, date: "2024-11-25 13:25:00" },
+    { type: "Credit", amount: 175000.0, date: "2024-11-25 07:45:00" },
+    { type: "Credit", amount: 250000.0, date: "2024-11-20 09:15:00" },
+    { type: "Debit", amount: -3200.0, date: "2024-11-20 19:50:00" },
+    { type: "Debit", amount: -900.0, date: "2024-11-15 18:30:00" },
+    { type: "Credit", amount: 60000.0, date: "2024-11-15 07:00:00" },
+    { type: "Debit", amount: -1000.0, date: "2024-11-10 20:10:00" },
+    { type: "Credit", amount: 80000.0, date: "2024-11-10 08:30:00" },
+    { type: "Debit", amount: -2500.0, date: "2024-11-05 13:45:00" },
+    { type: "Credit", amount: 120000.0, date: "2024-11-05 07:15:00" },
+    { type: "Debit", amount: -300.0, date: "2024-10-31 22:30:00" },
+    { type: "Credit", amount: 90000.0, date: "2024-10-31 10:00:00" },
+    { type: "Debit", amount: -4500.0, date: "2024-10-25 15:00:00" },
+    { type: "Credit", amount: 250000.0, date: "2024-10-25 08:15:00" },
+    { type: "Credit", amount: 100000.0, date: "2024-10-20 09:30:00" },
+    { type: "Debit", amount: -5500.0, date: "2024-10-20 12:50:00" },
+    { type: "Debit", amount: -600.0, date: "2024-10-15 14:00:00" },
+    { type: "Credit", amount: 70000.0, date: "2024-10-15 08:45:00" },
+    { type: "Debit", amount: -3500.0, date: "2024-10-10 13:20:00" },
+    { type: "Credit", amount: 220000.0, date: "2024-10-10 08:00:00" },
+    { type: "Debit", amount: -2500.0, date: "2024-10-05 19:30:00" },
+    { type: "Credit", amount: 140000.0, date: "2024-10-05 07:10:00" },
+    { type: "Credit", amount: 50000.0, date: "2024-10-01 09:40:00" },
+    { type: "Debit", amount: -700.0, date: "2024-10-01 20:30:00" },
   ];
+  
 
   const [visibleTransactions, setVisibleTransactions] = useState(4);
 
@@ -28,6 +62,8 @@ const Dashboard = () => {
   };
 
   return (
+
+    <>
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
       <div className="bg-purple-700 text-white p-4 flex justify-between items-center">
@@ -121,44 +157,10 @@ const Dashboard = () => {
 
 
       {/* Sticky Navigation Bar */}
-      <nav className="sticky bottom-0 bg-white border-t border-gray-200 p-4 flex justify-around">
-      <Link
-        to="/overview"
-        className="flex flex-col items-center text-gray-600 hover:text-orange-400 hover:font-extrabold"
-      >
-        <span className="material-icons">dashboard</span>
-        <span className="text-xs mt-1">Overview</span>
-      </Link>
-      <Link
-        to="/history"
-        className="flex flex-col items-center text-gray-600 hover:text-orange-400 hover:font-extrabold"
-      >
-        <span className="material-icons">history</span>
-        <span className="text-xs mt-1">History</span>
-      </Link>
-      <Link
-        to="/alerts"
-        className="flex flex-col items-center text-gray-600 hover:text-orange-400 hover:font-extrabold"
-      >
-        <span className="material-icons">error_outline</span>
-        <span className="text-xs mt-1">Alerts</span>
-      </Link>
-      <Link
-        to="/my-cards"
-        className="flex flex-col items-center text-gray-600 hover:text-orange-400 hover:font-extrabold"
-      >
-        <span className="material-icons">credit_card</span>
-        <span className="text-xs mt-1">My Cards</span>
-      </Link>
-      <Link
-        to="/settings"
-        className="flex flex-col items-center text-gray-600 hover:text-orange-400 hover:font-extrabold"
-      >
-        <span className="material-icons">settings</span>
-        <span className="text-xs mt-1">Settings</span>
-      </Link>
-    </nav>
+     
     </div>
+<BottomNav/>
+</>
   );
 };
 
